@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/login', function() { return view('auth.login'); })->name('login');
+Route::get('/register', function() { echo "register"; })->name('register');
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('auth');
